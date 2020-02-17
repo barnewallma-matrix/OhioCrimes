@@ -1,0 +1,5 @@
+﻿Crime,Firearms,Knives,"Other
+weapons","Hands, fists, feet, etc.",sql
+Murder,485,46,128,23,"INSERT INTO Weapons (Year, Crime, Firearms, Knives, OtherWeapons, Unarmed) VALUES (2017, 'Murder', 485, 46, 128, 23)"
+Robbery,"3,395",462,801,"6,211","INSERT INTO Weapons (Year, Crime, Firearms, Knives, OtherWeapons, Unarmed) VALUES (2017, 'Robbery', 3395, 462, 801, 6211)"
+Assaults,"5,991","2,856","4,263","2,081","INSERT INTO Weapons (Year, Crime, Firearms, Knives, OtherWeapons, Unarmed) VALUES (2017, 'Assaults', 5991, 2856, 4263, 2081)"

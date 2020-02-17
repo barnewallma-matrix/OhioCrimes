@@ -1,0 +1,4 @@
+city: ="INSERT INTO City (Id, Name, State) VALUES (" & A2 & ", '" & B2 & "', 'OH')"
+population: ="INSERT INTO Population (CityId, Year, Count) VALUES (" & A2 & ", 2017, " & C2 & ")"
+crimes: ="INSERT INTO Crimes (CityId, Year, Murder, Rape, Robbery, AggravatedAssault, PropertyCrime, Burglary, Larceny, MotorVehicleTheft, Arson, ViolentCrime) VALUES (" & IF(ISBLANK(A2), 0, A2) & ", 2017, " & IF(ISBLANK(C2), 0, C2) & ", " & IF(ISBLANK(D2), 0, D2) & ", " & IF(ISBLANK(E2), 0, E2) & ", " & IF(ISBLANK(F2), 0, F2) & ", " & IF(ISBLANK(G2), 0, G2) & ", " & IF(ISBLANK(H2), 0, H2) & ", " & IF(ISBLANK(I2), 0, I2) & ", " & IF(ISBLANK(J2), 0, J2) & ", " &  IF(ISBLANK(K2), 0, K2) & ", " &  IF(ISBLANK(L2), 0, L2) & ")"
+weapons: ="INSERT INTO Weapons (Year, Crime, Firearms, Knives, OtherWeapons, Unarmed) VALUES (2017, '" & A2 & "', " & B2 & ", " & C2 & ", " & D2 & ", " & E2 & ")"
