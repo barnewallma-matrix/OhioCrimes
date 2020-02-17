@@ -7,6 +7,7 @@ namespace OhioCrimes
   {
     public static void Main(string[] args)
     {
+      Database.Initalize();
       CreateWebHostBuilder(args).Build().Run();
     }
 
