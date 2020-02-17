@@ -1,1 +1,77 @@
-﻿
+﻿@model OhioCrimes.ViewModels.LayoutViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"]</title>
+
+  @RenderSection("Styles", required: false)
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+  <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Flag_of_Ohio.svg" alt="Logo">
+        </a>
+        <span class="navbar-burger burger" data-target="navbarMenu" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="@Url.RouteUrl("Crimes", new { year = Model.Year })" class="navbar-item is-active">
+            Crimes
+          </a>
+          <a href="@Url.RouteUrl("CrimesPer1000", new { year = Model.Year })" class="navbar-item">
+            Crimes per 1000
+          </a>
+          <a href="@Url.RouteUrl("Weapons", new { year = Model.Year })" class="navbar-item">
+            Weapons
+          </a>
+          <a href="@Url.RouteUrl("WeaponsAsPercentageOfCrimes", new { year = Model.Year })" class="navbar-item">
+            Weapons As Percentage Of Crimes
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title real-title">@Model.Year Crimes in the Ohio</h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="container is-fluid" style="padding-top:5rem">
+    <!-- START ARTICLE FEED -->
+    <section class="articles">
+      <!-- START ARTICLE -->
+      <div class="card article">
+        <div class="card-content">
+          <div class="media" style="margin-bottom:0px">
+            <div class="media-content has-text-centered">
+              <p class="title article-title">@ViewData["Title"]</p>
+            </div>
+          </div>
+          <div class="content">
+            @RenderBody()
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://www.amcharts.com/lib/version/4.8.4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/version/4.8.4/charts.js"></script>
+  @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿@model OhioCrimes.ViewModels.LayoutViewModel
+
+@{
+  ViewData["Title"] = "Crimes Per 1000";
+}
+
+@section Styles{
+
+}
+
+<div data-url="@Url.RouteUrl("CrimesPer1000Data", new { year = Model.Year })" style="height: 50vh" id="chartdiv"></div>
+
+@section Scripts
+{
+  <script src="~/ts/crimes.js"></script>
+}

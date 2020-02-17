@@ -1,0 +1,16 @@
+﻿@model OhioCrimes.ViewModels.LayoutViewModel
+
+@{
+  ViewData["Title"] = "Weapons As Percentage Of Crimes";
+}
+
+@section Styles{
+
+}
+
+<div data-url="@Url.RouteUrl("WeaponsAsPercentageOfCrimesData", new { year = Model.Year })" data-is-percent="true" style="height: 50vh" id="chartdiv"></div>
+
+@section Scripts
+{
+  <script src="~/ts/weapons.js"></script>
+}
